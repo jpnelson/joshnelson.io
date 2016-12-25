@@ -1,5 +1,7 @@
 # joshnelson.io
 
+[![Build Status](https://travis-ci.org/jpnelson/joshnelson.io.svg?branch=master)](https://travis-ci.org/jpnelson/joshnelson.io)
+
 This site is my personal portfolio, hosted on [joshnelson.io](http://joshnelson.io).
 
 The backend of the CMS is managed by contentful.
