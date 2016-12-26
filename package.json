@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "react-scripts": "0.8.4",
-    "s3-deploy": "^0.7.3"
+    "s3": "^4.4.0"
   },
   "dependencies": {
     "contentful": "^3.8.0",
@@ -17,7 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "deploy": "npm run build && s3-deploy './build/**' --cwd './build/' --region us-east-1 --bucket joshnelson.io",
+    "deploy": "npm run build && ./scripts.deploy.js",
     "eject": "react-scripts eject"
   }
 }

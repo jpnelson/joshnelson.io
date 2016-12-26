@@ -6,6 +6,7 @@ const margin = 8;
 const TileInner = styled.div`
   box-sizing: border-box;
   margin: ${margin}px;
+  border: 4px solid black;
   width: calc(50% - ${margin * 2}px);
   height: 25vh;
   @media (min-width: 1024px) {
