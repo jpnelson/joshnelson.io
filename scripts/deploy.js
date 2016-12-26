@@ -1,4 +1,11 @@
-const { bucket } = require('../config.json');
+const bucket = require('../config.json').bucket;
+const s3 = require('s3');
+var client = s3.createClient({
+  s3Options: {
+    accessKeyId: process.env.ACCESS_KEY,
+    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+  },
+});
 
 var params = {
   localDir: 'build',

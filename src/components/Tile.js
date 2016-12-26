@@ -65,6 +65,12 @@ const TileCaption = styled.div`
   transform: ${props => props.isVisible ? 'translateY(0)' : 'translateY(100%)'}
 `;
 
+const TileLink = styled(Link)`
+  display: block;
+  width: 100%;
+  height: 100%;
+`;
+
 class Tile extends Component {
 
   static propTypes = {
@@ -83,11 +89,11 @@ class Tile extends Component {
     return (
       <TileInner>
         <TileBack delay={flipDelay} isFlippedToFront={!isVisible} />
-        <Link to={`/about/${page}`}>
+        <TileLink to={`/about/${page}`}>
           <TileFront delay={flipDelay} isFlippedToFront={isVisible} background={background} >
             <TileCaption delay={flipDelay} isVisible={isVisible}>{children}</TileCaption>
           </TileFront>
-        </Link>
+        </TileLink>
       </TileInner>
     );
   }

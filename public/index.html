@@ -7,42 +7,6 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png">
     <title>Joshua Nelson</title>
     <style>
-      @keyframes fadein {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-      @keyframes fadeout {
-        0% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-
-      .sunrise-dawn, .sunrise-dusk {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-      }
-
-      .sunrise-dawn {
-        background: -webkit-linear-gradient(#0b061e 0%, #32315b 100%);
-        background: -o-linear-gradient(#0b061e 0%, #32315b 100%);
-        background: linear-gradient(#0b061e 0%, #32315b 100%);
-        animation: fadein 5s linear alternate-reverse infinite;
-      }
-
-      .sunrise-dusk {
-        background: -webkit-linear-gradient(#0b061e 0%, #4f2a2a 100%);
-        background: -o-linear-gradient(#0b061e 0%, #4f2a2a 100%);
-        background: linear-gradient(#0b061e 0%, #4f2a2a 100%);
-        animation: fadeout 5s linear alternate-reverse infinite;
-      }
       body {
         background: black;
       }
@@ -55,8 +19,6 @@
     </style>
   </head>
   <body>
-    <div class="sunrise-dawn"></div>
-    <div class="sunrise-dusk"></div>
     <div id="root"></div>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
