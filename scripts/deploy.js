@@ -10,14 +10,15 @@ var client = s3.createClient({
 var params = {
   localDir: 'build',
   deleteRemoved: true,
- 
   s3Params: {
     Bucket: bucket,
+    Prefix: '/',
   },
 };
 var uploader = client.uploadDir(params);
 uploader.on('error', function(err) {
   console.error("unable to sync:", err.stack);
+  process.exit(1);
 });
 uploader.on('progress', function() {
   console.log("progress", uploader.progressAmount, uploader.progressTotal);
