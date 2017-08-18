@@ -9,6 +9,7 @@ function entriesToPages(entries) {
         return {
             id: entry.fields.id,
             description: entry.fields.description,
+            body: entry.fields.body,
             externalLink: entry.fields.externalLink,
             title: entry.fields.title,
             image: {

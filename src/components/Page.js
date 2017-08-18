@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router'
 import styled from 'styled-components';
+import ReactMarkdown from 'react-markdown';
 
 const PageInner = styled.div`
   color: white;
@@ -10,11 +11,10 @@ const PageHeader = styled.div`
   width: 100%;
   background: white;
   color: black;
-  position: absolute;
-  top: 0;
   text-align: right;
   padding: 8px;
   box-sizing: border-box;
+  position: relative;
 `;
 const PageImage = styled.div`
   width: 100%;
@@ -33,6 +33,16 @@ const PageContent = styled.div`
 const PageTitle = styled.div`
   font-size: 2em;
   text-transform: uppercase;
+`;
+const PageBody = styled.div`
+  width: 100%;
+  position: relative;
+  background: white;
+  color: black;
+
+  a {
+    color: black;
+  }
 `;
 
 const action = `
@@ -87,8 +97,11 @@ class Page extends Component {
             {thisPage.description}
           </PageContent>
         </PageHeader>
+        <PageBody>
+          <ReactMarkdown source={thisPage.body} />
+        </PageBody>
         <Back to="/">Back</Back>
-        <ViewMore href={thisPage.externalLink}>View more</ViewMore>
+        {thisPage.externalLink && <ViewMore href={thisPage.externalLink}>View more</ViewMore>}
       </PageInner>
     );
   }
