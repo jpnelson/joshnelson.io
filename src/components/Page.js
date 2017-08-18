@@ -39,6 +39,7 @@ const PageBody = styled.div`
   position: relative;
   background: white;
   color: black;
+  padding: 10px;
 
   a {
     color: black;
