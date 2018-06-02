@@ -21,7 +21,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.props.route.pageProvider(pages => {
+    this.props.pageProvider(pages => {
       this.setState({
         pages,
         isLoaded: true

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { Link } from "react-router";
+import { Link } from "@reach/router";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 
@@ -59,11 +59,18 @@ const action = `
   text-decoration: underline;
 `;
 
-const ViewMore = styled.a`${action} right: 0;`;
+const ViewMore = styled.a`
+  ${action} right: 0;
+  border: 4px solid black;
+  border-right: none;
+`;
 
 const Back = styled(Link)`
   ${action} left: 0;
   cursor: pointer;
+
+  border: 4px solid black;
+  border-left: none;
 `;
 
 class Page extends Component {
@@ -75,7 +82,7 @@ class Page extends Component {
   }
 
   componentDidMount() {
-    this.props.route.pageProvider(pages => {
+    this.props.pageProvider(pages => {
       this.setState({
         pages
       });
@@ -84,7 +91,7 @@ class Page extends Component {
 
   render() {
     const thisPage = this.state.pages.filter(
-      page => page.id === this.props.params.page
+      page => page.id === this.props.page
     )[0];
     if (!thisPage) {
       return null;

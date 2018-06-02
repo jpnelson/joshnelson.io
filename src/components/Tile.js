@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
-import { Link } from "react-router";
+import { Link } from "@reach/router";
 
 const margin = 8;
 const TileInner = styled.div`
