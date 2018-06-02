@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Router, Route, hashHistory } from 'react-router'
-import Home from './components/Home';
-import Page from './components/Page';
-import pageProvider from './page-provider';
+import React, { Component } from "react";
+import { Router, Route, hashHistory } from "react-router";
+import Home from "./components/Home";
+import Page from "./components/Page";
+import pageProvider from "./page-provider";
 
 class App extends Component {
   constructor(props) {
@@ -12,8 +12,12 @@ class App extends Component {
   render() {
     return (
       <Router history={hashHistory}>
-        <Route path="/" pageProvider={this.pageProvider} component={Home}/>
-        <Route path="/about/:page" pageProvider={this.pageProvider} component={Page}/>
+        <Route path="/" pageProvider={this.pageProvider} component={Home} />
+        <Route
+          path="/about/:page"
+          pageProvider={this.pageProvider}
+          component={Page}
+        />
       </Router>
     );
   }

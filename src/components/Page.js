@@ -1,7 +1,9 @@
-import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router'
-import styled from 'styled-components';
-import ReactMarkdown from 'react-markdown';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+
+import { Link } from "react-router";
+import styled from "styled-components";
+import ReactMarkdown from "react-markdown";
 
 const PageInner = styled.div`
   color: white;
@@ -57,14 +59,10 @@ const action = `
   text-decoration: underline;
 `;
 
-const ViewMore = styled.a`
-  ${action}
-  right: 0;
-`;
+const ViewMore = styled.a`${action} right: 0;`;
 
 const Back = styled(Link)`
-  ${action}
-  left: 0;
+  ${action} left: 0;
   cursor: pointer;
 `;
 
@@ -72,20 +70,22 @@ class Page extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pages: [],
-    }
+      pages: []
+    };
   }
 
   componentDidMount() {
-    this.props.route.pageProvider((pages) => {
+    this.props.route.pageProvider(pages => {
       this.setState({
-        pages, 
+        pages
       });
     });
   }
 
   render() {
-    const thisPage = this.state.pages.filter((page) => page.id === this.props.params.page)[0];
+    const thisPage = this.state.pages.filter(
+      page => page.id === this.props.params.page
+    )[0];
     if (!thisPage) {
       return null;
     }
@@ -94,22 +94,22 @@ class Page extends Component {
         <PageImage background={thisPage.image.url} />
         <PageHeader>
           <PageTitle>{thisPage.title}</PageTitle>
-          <PageContent>
-            {thisPage.description}
-          </PageContent>
+          <PageContent>{thisPage.description}</PageContent>
         </PageHeader>
         <PageBody>
           <ReactMarkdown source={thisPage.body} />
         </PageBody>
         <Back to="/">Back</Back>
-        {thisPage.externalLink && <ViewMore href={thisPage.externalLink}>View more</ViewMore>}
+        {thisPage.externalLink && (
+          <ViewMore href={thisPage.externalLink}>View more</ViewMore>
+        )}
       </PageInner>
     );
   }
 }
 
 Page.propTypes = {
-  page: PropTypes.string,
+  page: PropTypes.string
 };
 
 export default Page;
