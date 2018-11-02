@@ -1,5 +1,9 @@
 import React from "react";
 
 export function Aa({ children }) {
-  return <a href={children}>{children}</a>;
+  return (
+    <a style={{ wordBreak: "break-all" }} href={children}>
+      {children}
+    </a>
+  );
 }
