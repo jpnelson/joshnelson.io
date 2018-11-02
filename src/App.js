@@ -15,7 +15,7 @@ class App extends Component {
       <Router>
         <Home path="/" pageProvider={this.pageProvider} />
         <Page path="/about/:page" pageProvider={this.pageProvider} />
-        <MetricsPage path="/page/metrics" />
+        <MetricsPage path="/pages/metrics" />
       </Router>
     );
   }
