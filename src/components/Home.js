@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Tile from "./Tile";
 import TileGrid from "./TileGrid";
+import Title from "./Title";
 
 function makeLoadingGrid(n) {
   const loadingGrid = [];
@@ -32,26 +33,34 @@ class Home extends Component {
   render() {
     const { pages, isLoaded } = this.state;
     if (!isLoaded) {
-      return <TileGrid>{makeLoadingGrid(8)}</TileGrid>;
+      return (
+        <TileGrid>
+          <Title />
+          {makeLoadingGrid(8)}
+        </TileGrid>
+      );
     }
     pages.sort((a, b) => (a.weight < b.weight ? -1 : 1));
 
     return (
-      <TileGrid>
-        {pages.map((page, i) => {
-          return (
-            <Tile
-              key={i}
-              background={page.image.url}
-              isVisible
-              flipDelay={500 + i * 200}
-              page={page.id}
-            >
-              {page.title}
-            </Tile>
-          );
-        })}
-      </TileGrid>
+      <React.Fragment>
+        <Title />
+        <TileGrid>
+          {pages.map((page, i) => {
+            return (
+              <Tile
+                key={i}
+                background={page.image.url}
+                isVisible
+                flipDelay={500 + i * 200}
+                page={page.id}
+              >
+                {page.title}
+              </Tile>
+            );
+          })}
+        </TileGrid>
+      </React.Fragment>
     );
   }
 }
