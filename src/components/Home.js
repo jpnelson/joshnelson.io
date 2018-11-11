@@ -34,6 +34,8 @@ class Home extends Component {
     if (!isLoaded) {
       return <TileGrid>{makeLoadingGrid(8)}</TileGrid>;
     }
+    pages.sort((a, b) => (a.weight < b.weight ? -1 : 1));
+
     return (
       <TileGrid>
         {pages.map((page, i) => {

@@ -13,6 +13,7 @@ function entriesToPages(entries) {
       body: entry.fields.body,
       externalLink: entry.fields.externalLink,
       title: entry.fields.title,
+      weight: entry.fields.weight,
       image: {
         title: entry.fields.image.fields.title,
         url: entry.fields.image.fields.file.url
