@@ -40,6 +40,7 @@ const PageBody = styled.div`
   background: white;
   color: black;
   padding: 10px;
+  box-sizing: border-box;
 
   a {
     color: black;
