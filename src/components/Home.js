@@ -32,7 +32,7 @@ class Home extends Component {
   render() {
     const { pages, isLoaded } = this.state;
     if (!isLoaded) {
-      return <TileGrid>{makeLoadingGrid(8)}</TileGrid>;
+      return <TileGrid>{makeLoadingGrid(12)}</TileGrid>;
     }
     pages.sort((a, b) => (a.weight < b.weight ? -1 : 1));
 
