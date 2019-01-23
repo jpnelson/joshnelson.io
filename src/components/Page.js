@@ -32,6 +32,7 @@ const PageContent = styled.div`
   margin-top: 8px;
 `;
 const PageTitle = styled.div`
+  font-family: "Germania One", cursive;
   font-size: 2em;
   text-transform: uppercase;
 `;

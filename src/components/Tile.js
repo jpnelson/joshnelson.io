@@ -61,6 +61,7 @@ const TileCaption = styled.div`
   color: black;
   padding: 4px;
   text-transform: uppercase;
+  font-family: "Germania One", cursive;
   font-size: 1em;
   text-align: right;
   transition: transform 750ms ${props => props.delay + 250}ms;
